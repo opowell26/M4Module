@@ -31,10 +31,10 @@
             android:orientation="vertical">
 
             <AutoCompleteTextView
-                android:id="@+id/email"
+                android:id="@+id/user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/prompt_email"
+                android:hint="@string/username"
                 android:inputType="textEmailAddress"
                 android:maxLines="1" />
 
