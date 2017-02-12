@@ -27,7 +27,4 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
         return u.checkPassword(pass);
     }
 
-    public UserManager() {
-
-    }
 }
