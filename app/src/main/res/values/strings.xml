@@ -14,4 +14,6 @@
         completions."
     </string>
     <string name="username">Username</string>
+    <string name="close">Close</string>
+    <string name="water_app">Water App</string>
 </resources>

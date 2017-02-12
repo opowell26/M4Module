@@ -3,25 +3,22 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Water App"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="174dp"
-        android:id="@+id/editText"
-        android:textAlignment="center" />
-
     <Button
-        android:text="Close"
+        android:text="@string/close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
+        android:id="@+id/close_button"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="@string/water_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textSize="24sp"
+        android:layout_above="@+id/close_button"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="31dp"
-        android:id="@+id/close_button" />
+        android:layout_marginBottom="47dp" />
 
 </RelativeLayout>
