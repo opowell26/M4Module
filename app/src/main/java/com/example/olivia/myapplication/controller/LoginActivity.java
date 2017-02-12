@@ -1,4 +1,4 @@
-package com.example.olivia.myapplication;
+package com.example.olivia.myapplication.controller;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
