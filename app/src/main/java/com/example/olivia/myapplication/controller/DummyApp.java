@@ -13,6 +13,7 @@ import android.widget.Button;
 public class DummyApp extends AppCompatActivity {
 
     private Button logoutButton;
+    private Button reportButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +21,21 @@ public class DummyApp extends AppCompatActivity {
         setContentView(R.layout.dummy_app);
 
         logoutButton = (Button) findViewById(R.id.logout_button);
+        reportButton = (Button) findViewById(R.id.report_button);
+
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DummyApp.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        //Method works something wrong with the ReportActivity
+        reportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DummyApp.this, ReportActivity.class);
                 startActivity(intent);
                 finish();
             }

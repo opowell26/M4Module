@@ -8,8 +8,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/logout_button"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="135dp" />
 
     <TextView
         android:text="@string/water_app"
@@ -17,8 +18,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:textSize="24sp"
+        android:layout_marginBottom="73dp"
+        android:layout_above="@+id/report_button"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/water_report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:id="@+id/report_button"
+        android:textAlignment="textStart"
         android:layout_above="@+id/logout_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="47dp" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

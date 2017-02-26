@@ -17,4 +17,6 @@
     <string name="close">Close</string>
     <string name="water_app">Water App</string>
     <string name="logout">logout</string>
+    <string name="title_activity_report">ReportActivity</string>
+    <string name="water_report">Water Purity Reports</string>
 </resources>
