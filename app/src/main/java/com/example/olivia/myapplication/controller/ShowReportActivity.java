@@ -1,20 +1,12 @@
 package com.example.olivia.myapplication.controller;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 //import com.example.olivia.myapplication.R;
 import com.example.olivia.myapplication.model.PurityReport;
-
-import static com.example.olivia.myapplication.controller.R.id.condition;
-import static com.example.olivia.myapplication.controller.R.id.location;
-import static com.example.olivia.myapplication.controller.R.id.worker;
 
 public class ShowReportActivity extends AppCompatActivity {
 
@@ -25,9 +17,10 @@ public class ShowReportActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //PurityReport report2 = (PurityReport) getIntent().getExtras().getParcelable("selectedReport");
-        PurityReport report2 = new PurityReport("Feb 14", "8:00", 39393, "Joe", "GA", "Aight", 400);
+        PurityReport report2 = (PurityReport) getIntent().getExtras().getParcelable("selectedReport");
+        //PurityReport report2 = new PurityReport("Feb 14", "8:00", 39393, "Joe", "GA", "Aight", 400);
 
+        TextView title = (TextView) findViewById(R.id.Title);
         TextView time = (TextView) findViewById(R.id.time);
         TextView reportNumber = (TextView) findViewById(R.id.report_number);
         TextView worker = (TextView) findViewById(R.id.worker);
@@ -35,14 +28,13 @@ public class ShowReportActivity extends AppCompatActivity {
         TextView condition = (TextView) findViewById(R.id.condition);
         TextView ppm = (TextView) findViewById(R.id.PPM);
 
-
-        time.setText("NEW");
-        time.setText(report2.getTime());
-        reportNumber.setText(""+report2.getReportNumber());
-        worker.setText(report2.getWorkerName());
-        location.setText(report2.getLocation());
-        condition.setText(report2.getCondition());
-        ppm.setText(""+report2.getVirusPPM());
+        title.setText(report2.getDate());
+        time.setText("Time of Report: " + report2.getDate());
+        reportNumber.setText("Report Number: " + report2.getReportNumber());
+        worker.setText("Worker Name: " + report2.getWorkerName());
+        location.setText("Location: " + report2.getLocation());
+        condition.setText("Water Condition: " + report2.getCondition());
+        ppm.setText("Concentration PPM: " + report2.getVirusPPM());
 
 
 
