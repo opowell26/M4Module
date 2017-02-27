@@ -1,6 +1,8 @@
 package com.example.olivia.myapplication.model;
 
 import android.icu.util.Calendar;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import static android.R.attr.name;
 
@@ -8,7 +10,7 @@ import static android.R.attr.name;
  * Created by Julian on 2/26/2017.
  */
 
-public class PurityReport {
+public class PurityReport implements Parcelable {
     private String date;
     private String time;
     private int reportNumber;
@@ -31,6 +33,40 @@ public class PurityReport {
         condition = _condition;
         virusPPM = _virusPPM;
     }
+    private PurityReport(Parcel in) {
+        date = in.readString();
+        time = in.readString();
+        reportNumber = in.readInt();
+        workerName = in.readString();
+        location = in.readString();
+        condition = in.readString();
+        virusPPM = in.readInt();
+    }
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(date);
+        dest.writeString(time);
+        dest.writeInt(reportNumber);
+        dest.writeString(workerName);
+        dest.writeString(location);
+        dest.writeString(condition);
+        dest.writeString(String.valueOf(virusPPM));
+    }
+
+    public static final Parcelable.Creator<PurityReport> CREATOR
+            = new Parcelable.Creator<PurityReport>() {
+            public PurityReport createFromParcel(Parcel in) {
+               return new PurityReport(in);
+            }
+
+            public PurityReport[] newArray(int size) {
+                return new PurityReport[size];
+            }
+        };
 
     public String getWorkerName() {
         return workerName;

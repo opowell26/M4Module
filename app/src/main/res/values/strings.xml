@@ -20,4 +20,6 @@
     <string name="title_activity_report">ReportActivity</string>
     <string name="water_report">Water Purity Reports</string>
     <string name="create_button">Create New Report</string>
+    <string name="title_activity_show_report">ShowReportActivity</string>
+    <string name="report_date">Date of Report</string>
 </resources>

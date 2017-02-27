@@ -1,6 +1,8 @@
 package com.example.olivia.myapplication.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +16,6 @@ import android.widget.ListView;
 
 import com.example.olivia.myapplication.model.PurityReport;
 
-//import com.example.olivia.myapplication.R;
 
 public class ReportActivity extends AppCompatActivity {
     private Button createButton;
@@ -26,8 +27,11 @@ public class ReportActivity extends AppCompatActivity {
         setContentView(R.layout.report_layout);
 
         //This is a sample report
-        PurityReport report1 = new PurityReport("Feb17", "8:00", 1234, "John Smith", "GA", "BAD", 300);
+        final PurityReport report1 = new PurityReport("Feb17", "8:00", 1234, "John Smith", "GA", "BAD", 300);
         PurityReport[] reports = {report1};
+
+        //
+
 
         ListAdapter adapter = new ArrayAdapter<PurityReport>(this, android.R.layout.simple_list_item_1, reports);
         ListView reportList = (ListView) findViewById(R.id.report_list);
@@ -36,8 +40,11 @@ public class ReportActivity extends AppCompatActivity {
         reportList.setOnItemClickListener(
                 new AdapterView.OnItemClickListener(){
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        String food = String.valueOf(parent.getItemAtPosition(position));
-
+                        Intent intent = new Intent(ReportActivity.this, ShowReportActivity.class);
+                        //intent.putExtra("selectedReport", parent.getItemIdAtPosition(position));
+                        intent.putExtra("selectedReport", report1);
+                        startActivity(intent);
+                        finish();
                     }
                 }
         );
