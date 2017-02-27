@@ -12,12 +12,16 @@ import android.widget.TextView;
 //import com.example.olivia.myapplication.R;
 import com.example.olivia.myapplication.model.PurityReport;
 
+import static com.example.olivia.myapplication.controller.R.id.condition;
+import static com.example.olivia.myapplication.controller.R.id.location;
+import static com.example.olivia.myapplication.controller.R.id.worker;
+
 public class ShowReportActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_report);
+        setContentView(R.layout.content_show_report);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -31,13 +35,20 @@ public class ShowReportActivity extends AppCompatActivity {
         TextView condition = (TextView) findViewById(R.id.condition);
         TextView ppm = (TextView) findViewById(R.id.PPM);
 
-//        time.setText(report2.getTime());
-//        reportNumber.setText(report2.getReportNumber());
-//        worker.setText(report2.getWorkerName());
-//        location.setText(report2.getLocation());
-//        condition.setText(report2.getCondition());
-//        ppm.setText(report2.getVirusPPM());
+
+        time.setText("NEW");
+        time.setText(report2.getTime());
+        reportNumber.setText(""+report2.getReportNumber());
+        worker.setText(report2.getWorkerName());
+        location.setText(report2.getLocation());
+        condition.setText(report2.getCondition());
+        ppm.setText(""+report2.getVirusPPM());
+
+
+
     }
+
+
 
 
 
